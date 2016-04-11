@@ -28,6 +28,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <leader>n :NERDTreeToggle<CR>
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_json_frontmatter = 1
+let g:vim_markdown_frontmatter = 1
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -55,6 +60,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+inoremap <leader>i <ESC>
 set nu
 set laststatus=2
 set showmatch
